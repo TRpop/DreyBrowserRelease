@@ -1,0 +1,716 @@
+{
+  "format": "drey-publication-export/1",
+  "repo": "drey-releases",
+  "visibility": "public",
+  "purpose": "설치·업데이트 배포물 공개 저장소 — 저장소에는 안내·변경 사항·고지·체크섬만, 설치 파일은 GitHub Release 자산으로 (git add 금지)",
+  "source": {
+    "kind": "main",
+    "commit": "b411732a2b161d6b0c877937ecf12c24d8fe5461"
+  },
+  "files": [
+    {
+      "path": "README.en.md",
+      "bytes": 6981,
+      "sha256": "6D0398DBB7A7511680E5BF0B812F6CCB6DC833376D3A2867DC00EB8F1905243E"
+    },
+    {
+      "path": "README.ko.md",
+      "bytes": 7823,
+      "sha256": "9815509F754724CE8AB723C50BB558D7B4EE61A48D4B16E1ED996B109289F2C5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7986,
+      "sha256": "9D565B26ED368017059AF8A0711450C8A3D78AC48EA8C780A2DFBC11DFFEE93A"
+    },
+    {
+      "path": "TERMS.ko.md",
+      "bytes": 4173,
+      "sha256": "36E828F5E555731B22AF65F322DDA4C40D8A32B78575B3EB404C53D790C2AA5D"
+    },
+    {
+      "path": "TERMS.md",
+      "bytes": 3887,
+      "sha256": "BF4B7DB13BB2A5BB34BECB22E2D28C2BC2445AEAF096BBD35F750D92E159E6DD"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 635827,
+      "sha256": "0A9F8929E44837C4F2C8C115083F2C80E7EA31E65459B96F03B35B67B6BD1C53"
+    },
+    {
+      "path": "assets/ai.svg",
+      "bytes": 7839,
+      "sha256": "65D653560C37FEB99395D2F5E6A2CC9A59538353F32C1A6F73A7D14C007ADFA0"
+    },
+    {
+      "path": "assets/documents-extensions.svg",
+      "bytes": 4781,
+      "sha256": "5CDD0AA9E7ECB1629FB16F8D633F68A05FCECF553B1FD49A445826EF0DA0B7C0"
+    },
+    {
+      "path": "assets/explorer-desktop.svg",
+      "bytes": 11744,
+      "sha256": "D2664E6E0BE9E7B871FF51181CA44881BDD7CF67EDDD861E0FC6D326A8A953AC"
+    },
+    {
+      "path": "assets/groups.svg",
+      "bytes": 5186,
+      "sha256": "E751795EBAB7B08473861D92E93A207D5BF826E620D249742F44D2A134B81FC9"
+    },
+    {
+      "path": "assets/hero.svg",
+      "bytes": 7651,
+      "sha256": "E40F0A5D71CA6A773AA738F1F4688915C612B0B4EAB3B20F1545BB0B244DD728"
+    },
+    {
+      "path": "assets/tab-layouts.svg",
+      "bytes": 7041,
+      "sha256": "9D737254E273F66ADA0865335DD20BF8E178B73073266E33E15D7CDFCE08007C"
+    },
+    {
+      "path": "releases/1.0.0/CHANGES.md",
+      "bytes": 3074,
+      "sha256": "102D3BF79DE5C3ED3C4C86CFD3C62E8D00CE5FBA393539C176374B1B38D8F0F4"
+    },
+    {
+      "path": "releases/1.0.0/SHA256SUMS.txt",
+      "bytes": 348,
+      "sha256": "242BB967649BC353302ABF1793D7B45C4A91DCE08017C72FD9B151D69E9F45C5"
+    },
+    {
+      "path": "site/index.html",
+      "bytes": 8882,
+      "sha256": "FB7A808CE8397CF689848F980AD5FEA4F1B96D527FD0EE6425E70F769B7EF5F3"
+    },
+    {
+      "path": "site/ko.html",
+      "bytes": 9590,
+      "sha256": "F91D02458F130A0865FC5C3A695B08C46994A632D7297EF297FD0D02427D307A"
+    },
+    {
+      "path": "site/site.css",
+      "bytes": 3727,
+      "sha256": "1A3AA59D861C8BFCB9D42E4D30DCFBD29A120A70D91F4B145A89BD3117C7697D"
+    },
+    {
+      "path": "site/site.js",
+      "bytes": 2907,
+      "sha256": "030372F06866A803630560737C339344650ECD24BD0747E19336760868BE78E8"
+    }
+  ],
+  "release_assets_not_in_git": [
+    {
+      "name": "DreyBrowser-1.0.0-Setup.exe",
+      "source": "out/2026-11-07_v100_publication/release-assets/DreyBrowser-1.0.0-Setup.exe",
+      "bytes": 169286978,
+      "sha256": "1C303FF7AC25A2CF5BEEB1633722C6C339A9647DA6F7DB331A3290DD7948432A"
+    },
+    {
+      "name": "DreyBrowser-1.0.0-full.nupkg",
+      "source": "out/2026-11-07_v100_publication/release-assets/DreyBrowser-1.0.0-full.nupkg",
+      "bytes": 161703746,
+      "sha256": "5C585865AA70D7B812C68341B1DD2399B5E05D529B2EB6F03DAA594170B16EA2"
+    },
+    {
+      "name": "releases.win.json",
+      "source": "out/2026-11-07_v100_publication/release-assets/releases.win.json",
+      "bytes": 257,
+      "sha256": "6D90C881779037593FC0CE370D2EC76C9A4EC3B374A99DF54804F876A6206BEE"
+    },
+    {
+      "name": "RELEASES",
+      "source": "out/2026-11-07_v100_publication/release-assets/RELEASES",
+      "bytes": 82,
+      "sha256": "DF10EF6FAEE4F834EE2A861F1E118AFBB9E753907B878A5D1B705F9ABF755410"
+    }
+  ],
+  "scan": {
+    "block": 0,
+    "review": 95,
+    "task_id_severity": "block",
+    "task_id_note": null,
+    "findings": [
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 41
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 293
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 589
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 595
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 759
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 1164
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 1259
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 1741
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 1741
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 1756
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3317
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3318
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3319
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3319
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3320
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3320
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3321
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3322
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3323
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3324
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3324
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3325
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3326
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3327
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3328
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3329
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3330
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3331
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3332
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3333
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3334
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3335
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3336
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3337
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3338
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3339
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3340
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3341
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3342
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3343
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3344
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3345
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3346
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3347
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3348
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3349
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3350
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3351
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3352
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3353
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3354
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3355
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3355
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3356
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3357
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3358
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3372
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3373
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3375
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3376
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3377
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3379
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3380
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3381
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3382
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3383
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3384
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3387
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3388
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3389
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3390
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3391
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3392
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3393
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3394
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3395
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3396
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3398
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3399
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3400
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3401
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3402
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3403
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3404
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3406
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3407
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 3408
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 4389
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 5160
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 5395
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 7124
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 7726
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 8983
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 9730
+      },
+      {
+        "rule": "license_author_email",
+        "severity": "review",
+        "path": "THIRD-PARTY-NOTICES.txt",
+        "line": 9856
+      }
+    ]
+  },
+  "publication": {
+    "status": "ready_for_review",
+    "blockers": [],
+    "verified": [
+      "고지 재생성: 2026-11-03 build_notices.py --check 0 (64항목·빈 본문 0) — 플러그인 build 의존성은 고정 lock 으로 npm ci --ignore-scripts (프로젝트 안 캐시, 공식 npm 레지스트리)",
+      "서명: 2026-11-07 사용자 결정 — 코드 서명 없이 배포(README·SHA256SUMS 로 확인 안내)",
+      "사용 조건·개인정보: 2026-11-07 사용자 수용 — TERMS.md·TERMS.ko.md(시행일 2026-11-07, 문의 https://github.com/TRpop/DreyBrowserRelease/issues)",
+      "2026-11-07 1.0.0: 설치기1회빌드·정적852파일/원본308일치·Sandbox설치41/41·설정/튜토리얼57/57, 1.0.0 full만 참조하는 새 피드·SHA256 대조 완료"
+    ]
+  }
+}

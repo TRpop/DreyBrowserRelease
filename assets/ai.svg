@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-labelledby="t d" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+<title id="t">Four AI features</title><desc id="d">AI Agent works in a project folder with approvals; Ask about this page opens a question pane that uses Claude Code or Codex on this PC; a web chatbot opens in the side view and gets page text only when you copy it as Markdown and paste; MCP lets an outside AI app operate only in a group you lend, and you can take it back.</desc>
+<rect width="960" height="520" rx="18" fill="#eef1f6"/>
+<rect x="20" y="20" width="440" height="230" rx="14" fill="#fff" stroke="#d5dae3"/>
+<rect x="20" y="20" width="6" height="230" rx="3" fill="#7a4fd6"/>
+<text x="42" y="52" font-size="16" font-weight="700" fill="#7a4fd6" text-anchor="start">AI Agent</text><text x="42" y="72" font-size="12" font-weight="400" fill="#6b7385" text-anchor="start">Work in a project folder</text>
+<rect x="500" y="20" width="440" height="230" rx="14" fill="#fff" stroke="#d5dae3"/>
+<rect x="500" y="20" width="6" height="230" rx="3" fill="#2f6fde"/>
+<text x="522" y="52" font-size="16" font-weight="700" fill="#2f6fde" text-anchor="start">Ask about this page</text><text x="522" y="72" font-size="12" font-weight="400" fill="#6b7385" text-anchor="start">Question pane next to the page</text>
+<rect x="20" y="270" width="440" height="230" rx="14" fill="#fff" stroke="#d5dae3"/>
+<rect x="20" y="270" width="6" height="230" rx="3" fill="#0e7f8c"/>
+<text x="42" y="302" font-size="16" font-weight="700" fill="#0e7f8c" text-anchor="start">Web chatbot in side view</text><text x="42" y="322" font-size="12" font-weight="400" fill="#6b7385" text-anchor="start">ChatGPT or Copilot as a web page</text>
+<rect x="500" y="270" width="440" height="230" rx="14" fill="#fff" stroke="#d5dae3"/>
+<rect x="500" y="270" width="6" height="230" rx="3" fill="#c8661a"/>
+<text x="522" y="302" font-size="16" font-weight="700" fill="#c8661a" text-anchor="start">MCP</text><text x="522" y="322" font-size="12" font-weight="400" fill="#6b7385" text-anchor="start">An outside AI app works in a lent group</text>
+<rect x="42" y="88" width="120" height="146" rx="8" fill="#f7f4fe"/><text x="54" y="108" font-size="11.5" font-weight="600" fill="#7a4fd6" text-anchor="start">my-project</text>
+<text x="62" y="132" font-size="11" font-weight="400" fill="#6b7385" text-anchor="start">src</text>
+<text x="62" y="154" font-size="11" font-weight="400" fill="#6b7385" text-anchor="start">docs</text>
+<text x="62" y="176" font-size="11" font-weight="400" fill="#6b7385" text-anchor="start">tests</text>
+<text x="62" y="198" font-size="11" font-weight="400" fill="#6b7385" text-anchor="start">README.md</text>
+<rect x="176" y="88" width="250" height="34" rx="8" fill="#f1f3f7"/><text x="188" y="110" font-size="11.5" font-weight="400" fill="#1f2430" text-anchor="start">Fix the failing test in tests/</text>
+<rect x="176" y="130" width="250" height="52" rx="8" fill="#f7f4fe"/><text x="188" y="150" font-size="11.5" font-weight="600" fill="#7a4fd6" text-anchor="start">Claude Code · edited 2 files</text><rect x="188" y="162" width="200" height="6" rx="3.0" fill="#d5dae3" opacity="1.0"/>
+<rect x="176" y="190" width="120" height="28" rx="14" fill="#7a4fd6"/><text x="236" y="209" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">Approve</text>
+<rect x="304" y="190" width="122" height="28" rx="14" fill="#fff" stroke="#d5dae3"/><text x="365" y="209" font-size="12" font-weight="400" fill="#1f2430" text-anchor="middle">View changes</text>
+<rect x="522" y="88" width="220" height="146" rx="8" fill="#f4f7fe"/><text x="534" y="110" font-size="12" font-weight="600" fill="#1f2430" text-anchor="start">Release notes 4.2</text><rect x="534" y="124" width="114.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="534" y="140" width="151.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="534" y="156" width="171.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="534" y="172" width="94.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="534" y="188" width="171.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="534" y="204" width="151.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/>
+<rect x="752" y="88" width="168" height="146" rx="8" fill="#fff" stroke="#2f6fde"/><text x="764" y="108" font-size="12" font-weight="700" fill="#2f6fde" text-anchor="start">✦ Ask</text>
+<rect x="764" y="118" width="144" height="40" rx="6" fill="#f1f3f7"/><text x="772" y="136" font-size="10.5" font-weight="400" fill="#1f2430" text-anchor="start">What changed for</text><text x="772" y="150" font-size="10.5" font-weight="400" fill="#1f2430" text-anchor="start">admins?</text>
+<rect x="764" y="172" width="130" height="6" rx="3.0" fill="#2f6fde" opacity="0.4"/><rect x="764" y="186" width="110" height="6" rx="3.0" fill="#2f6fde" opacity="0.4"/><rect x="764" y="200" width="124" height="6" rx="3.0" fill="#2f6fde" opacity="0.4"/>
+<text x="764" y="224" font-size="9.5" font-weight="400" fill="#6b7385" text-anchor="start">via Claude Code / Codex</text>
+<rect x="42" y="338" width="210" height="146" rx="8" fill="#f2f8f8"/><text x="54" y="360" font-size="12" font-weight="600" fill="#1f2430" text-anchor="start">Article page</text><rect x="54" y="374" width="108.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="54" y="390" width="142.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="54" y="406" width="162.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="54" y="422" width="88.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="54" y="438" width="162.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/><rect x="54" y="454" width="142.0" height="8" rx="4.0" fill="#d5dae3" opacity="1.0"/>
+<rect x="262" y="338" width="164" height="146" rx="8" fill="#fff" stroke="#0e7f8c"/><text x="274" y="358" font-size="11.5" font-weight="700" fill="#0e7f8c" text-anchor="start">chatbot (web)</text>
+<rect x="274" y="370" width="140" height="44" rx="6" fill="#f1f3f7"/><text x="282" y="388" font-size="10.5" font-weight="400" fill="#1f2430" text-anchor="start">Pasted Markdown</text><text x="282" y="403" font-size="10.5" font-weight="400" fill="#6b7385" text-anchor="start">of the article</text>
+<rect x="54" y="456" width="186" height="20" rx="10" fill="#0e7f8c" opacity="0.14"/><text x="147" y="470" font-size="10" font-weight="600" fill="#0e7f8c" text-anchor="middle">Copy page as Markdown → paste</text>
+<rect x="522" y="338" width="120" height="70" rx="10" fill="#fff4ea" stroke="#c8661a"/><text x="582" y="368" font-size="12" font-weight="700" fill="#c8661a" text-anchor="middle">Outside</text><text x="582" y="386" font-size="12" font-weight="700" fill="#c8661a" text-anchor="middle">AI app</text>
+<path d="M648 373 h44" stroke="#c8661a" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="698" y="330" width="222" height="154" rx="10" fill="#fff" stroke="#d5dae3"/>
+<rect x="706" y="338" width="206" height="78" rx="8" fill="#c8661a" opacity="0.10" stroke="#c8661a" stroke-dasharray="4 3"/>
+<text x="716" y="356" font-size="11.5" font-weight="700" fill="#c8661a" text-anchor="start">Lent group: Research</text>
+<rect x="716" y="368" width="150" height="6" rx="3.0" fill="#d5dae3" opacity="1.0"/><rect x="716" y="382" width="120" height="6" rx="3.0" fill="#d5dae3" opacity="1.0"/><rect x="716" y="396" width="140" height="6" rx="3.0" fill="#d5dae3" opacity="1.0"/>
+<text x="716" y="438" font-size="11" font-weight="400" fill="#6b7385" text-anchor="start">Other groups: not operated</text>
+<rect x="716" y="450" width="96" height="24" rx="12" fill="#1f2430"/><text x="764" y="466" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">⏸ Take back</text>
+</svg>
