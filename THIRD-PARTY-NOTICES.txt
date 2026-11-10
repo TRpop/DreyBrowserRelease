@@ -10363,10 +10363,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 ==============================================================================
-[한글 편집기] rhwp (rhwp-studio) 0.8.6
+[한글 편집기] rhwp (rhwp-studio) 0.9.0
 라이선스: MIT
 https://github.com/edwardkim/rhwp
-본 제품은 한컴의 HWP 문서 파일(.hwp) 공개 문서를 참고하여 개발하였습니다.
+본 제품은 한컴의 HWP 문서 파일(.hwp) 공개 문서를 참고하여 개발하였습니다. 배포본: 공식 웹 배포(GitHub Pages) 빌드 커밋 7213ed1f96266b95e22cd5645a07851c9c18298e(v0.9.0 태그 c9095c5f6 뒤 6커밋 — 보안 백포트·문서, src/·rhwp-studio/src/ 변경 없음)와 npm @rhwp/editor 0.9.0. 태그 소스로 직접 빌드한 파일과 바이트가 같다는 뜻은 아님
 
 MIT License
 
@@ -10391,18 +10391,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ==============================================================================
-[한글 편집기] rhwp 안의 서드파티 구성 요소 (Rust 크레이트·canvaskit 등) 0.8.6
+[한글 편집기] rhwp 안의 서드파티 구성 요소 (Rust 크레이트·canvaskit 등) 0.9.0
 라이선스: MIT, Apache-2.0, BSD-3-Clause, Zlib, ISC 등
-https://github.com/edwardkim/rhwp/blob/v0.8.6/THIRD_PARTY_LICENSES.md
-배포한 rhwp_bg.wasm 안 크레이트 41개가 v0.8.6 태그의 Cargo.lock 과 일치(0.8.7 은 6개 다름) — 그 태그의 목록
+https://github.com/edwardkim/rhwp/blob/v0.9.0/THIRD_PARTY_LICENSES.md
+배포한 rhwp_bg.wasm(빌드 커밋 7213ed1) 안 크레이트 경로 75개 중 73개가 v0.9.0 태그 Cargo.lock 과 판까지 같음(나머지 2개 dlmalloc·hashbrown 은 Rust 표준 라이브러리 내장분) — 그 태그의 목록
 
 # Third-Party Licenses
 
 rhwp 프로젝트가 사용하는 서드파티 라이브러리 및 리소스의 라이선스 목록이다.
 
+아랍어 문맥 측정의 결합 속성 표는 Unicode 16.0.0의
+[ArabicShaping.txt](https://www.unicode.org/Public/16.0.0/ucd/ArabicShaping.txt)에서 생성했다.
+Copyright © 2024 Unicode, Inc.이며 [Unicode License v3](assets/licenses/Unicode-3.0.txt)를 적용한다.
+원문 SHA-256은 `764f420cedfc8b43d9fec251c957a5d55fc45d40f6573f162990ed1dce7e36e0`이다.
+
+Print JPEG 인코더의 원래 라이선스·저작권 고지는 `vendor/rhwp-jpeg-encoder/LICENSE-*`에 있다.
+Print JPEG 디코더의 선택 변환은 공개 Intel MediaSDK 정수 IDCT(MIT)를 Rust로 번역하고,
+IJG 보간 규칙을 재표현한다. Intel 저작권·MIT 고지는
+`src/renderer/image_resolver/print_jpeg_idct.rs`와 `licenses/intel-mediasdk/LICENSE`, IJG 원문과 배포 조건은
+`vendor/rhwp-zune-jpeg/README.ijg`, 해당 구현은 `vendor/rhwp-zune-jpeg/src/ijg_upsampler.rs`와
+최종 JPEG 재생의 `vendor/rhwp-zune-jpeg/src/ijg_replay.rs`,
+변경 설명은 `vendor/rhwp-zune-jpeg/RHWP_PATCHES.md`에 있다.
+This software is based in part on the work of the Independent JPEG Group.
+
 기준 파일:
 
-- `Cargo.toml` / `Cargo.lock` (`rhwp` v0.8.6)
+- `Cargo.toml` / `Cargo.lock` (`rhwp` v0.9.0)
 - `rhwp-studio/package.json` / `rhwp-studio/package-lock.json`
 - `rhwp-chrome/package.json` / `rhwp-chrome/package-lock.json`
 - `rhwp-firefox/package.json` / `rhwp-firefox/package-lock.json`
@@ -10435,39 +10449,66 @@ rhwp 프로젝트가 사용하는 서드파티 라이브러리 및 리소스의 
 | getrandom | 0.4.3 | MIT OR Apache-2.0 | rust-random/getrandom | 서명 키 난수 생성 |
 | hmac | 0.13.0 | MIT OR Apache-2.0 | RustCrypto/MACs | HWPX 무결성 |
 | image | 0.25.10 | MIT OR Apache-2.0 | image-rs/image | BMP/JPEG/PNG 디코딩 |
+| rhwp-zune-jpeg | 0.5.15-rhwp.1 | (MIT OR Apache-2.0 OR Zlib) AND IJG | etemesi254/zune-image, IJG | 요청별 할당 예산·인스턴스별 Print 변환; 기본 PDF import decoder는 원래 변환 유지 |
 | js-sys | 0.3.102 | MIT OR Apache-2.0 | rustwasm/wasm-bindgen | WASM JS interop |
+| office_oxide | 0.1.9 | MIT OR Apache-2.0 | yfedoseev/office_oxide | `pdf-import` optional 호환성 제약; PDF 전이 의존성 |
 | paste | 1.0.15 | MIT OR Apache-2.0 | dtolnay/paste | 매크로 보조 |
 | pbkdf2 | 0.13.0 | MIT OR Apache-2.0 | RustCrypto/password-hashes | HWPX 키 파생 |
 | pcx | 0.2.5 | MIT OR Apache-2.0 OR WTFPL | kryptan/pcx | PCX 이미지 디코딩 |
 | pdf-writer | 0.12.1 | MIT OR Apache-2.0 | typst/pdf-writer | PDF 출력 |
+| rhwp-pdf-import-backend | 0.3.78-rhwp.1 | MIT OR Apache-2.0 | edwardkim/rhwp | `pdf-import` optional; `pdf_oxide 0.3.78` 기반 내부 보안 패치, 코드 import alias `pdf_oxide` |
 | quick-xml | 0.41.0 | MIT | tafia/quick-xml | HWPX XML 파싱 |
-| resvg | 0.47.0 | Apache-2.0 OR MIT | linebender/resvg | native-skia SVG raster (optional) |
+| resvg | 0.47.0 | Apache-2.0 OR MIT | linebender/resvg | Native/WASM 공통 WMF Print surface, native-skia SVG raster |
 | roxmltree | 0.21.1 | MIT OR Apache-2.0 | RazrFalcon/roxmltree | XML 검증·정규화 |
 | serde | 1.0.229 | MIT OR Apache-2.0 | serde-rs/serde | 직렬화 |
 | serde_json | 1.0.151 | MIT OR Apache-2.0 | serde-rs/json | JSON 직렬화 |
 | sha1 | 0.11.0 | MIT OR Apache-2.0 | RustCrypto/hashes | HWPX 암호 키 파생 |
 | sha2 | 0.11.0 | MIT OR Apache-2.0 | RustCrypto/hashes | 서명·CAS 해시 |
-| skia-safe | 0.99.0 | MIT | rust-skia/rust-skia | native-skia PNG/PDF backend (optional) |
+| skia-safe | 0.156.0 | MIT | rust-skia/rust-skia | native-skia PNG/PDF backend (optional) |
 | snafu | 0.9.2 | MIT OR Apache-2.0 | shepmaster/snafu | 에러 처리 |
 | strum | 0.28.0 | MIT | Peternator7/strum | enum derive |
 | subsecond | 0.7.10 | MIT OR Apache-2.0 | DioxusLabs/dioxus | 개발 핫패치 (optional) |
 | subsetter | 0.2.6 | MIT OR Apache-2.0 | typst/subsetter | 폰트 subset |
-| svg2pdf | 0.13.0 | MIT OR Apache-2.0 | typst/svg2pdf | SVG → PDF |
+| rhwp-jpeg-encoder | 0.7.1-rhwp.1 (upstream 0.7.1) | (MIT OR Apache-2.0) AND IJG | vstroebel/jpeg-encoder, rhwp 보정 | Print JPEG의 성분 순서·채널별 sampling·정수 DCT/YCbCr 전달. 원본 및 패치 고지 유지 |
+| rhwp-svg2pdf | 0.13.0-rhwp.1 (upstream 0.13.0) | MIT OR Apache-2.0 | typst/svg2pdf, rhwp 보정 | SVG → PDF. 원저작자·패치 고지 유지 |
 | svgtypes | 0.16.1 | Apache-2.0 OR MIT | linebender/svgtypes | SVG 값 파싱 |
 | ttf-parser | 0.25.1 | MIT OR Apache-2.0 | harfbuzz/ttf-parser | 폰트 파싱 |
 | unicode-properties | 0.1.4 | MIT OR Apache-2.0 | unicode-rs/unicode-properties | 유니코드 문자 분류 |
+| unicode-bidi | 0.3.18 | MIT OR Apache-2.0 | servo/unicode-bidi | 텍스트 표시 방향과 논리 구간의 시각 원점 |
+| unicode-bidi-mirroring | 0.4.0 | MIT OR Apache-2.0 | https://github.com/RazrFalcon/unicode-bidi-mirroring |
 | unicode-segmentation | 1.13.3 | MIT OR Apache-2.0 | unicode-rs/unicode-segmentation | grapheme/word segmentation |
 | unicode-width | 0.2.2 | MIT OR Apache-2.0 | unicode-rs/unicode-width | 문자 폭 계산 |
-| usvg | 0.45.1 | Apache-2.0 OR MIT | linebender/resvg | SVG 파싱 |
+| usvg | 0.45.1 / 0.47.0 | Apache-2.0 OR MIT | linebender/resvg | Native SVG 파싱 / 공통 WMF surface의 resvg 파싱 |
 | wasm-bindgen | 0.2.125 | MIT OR Apache-2.0 | rustwasm/wasm-bindgen | WASM binding |
 | wasm-bindgen-test | 0.3.75 | MIT OR Apache-2.0 | rustwasm/wasm-bindgen | WASM 테스트 |
 | web-sys | 0.3.102 | MIT OR Apache-2.0 | rustwasm/wasm-bindgen | Web API binding |
 | zip | 8.6.0 | MIT | zip-rs/zip2 | HWPX ZIP 처리 |
 
+### PDF 코덱의 내부 보정판 (#8183·#8174)
+
+현재 #8174 v2-S02의 기본 빌드는 다음 코덱을 포함한다. `pdf-jbig2`는 JBIG2와 내부 MMR 처리용
+CCITT를, `pdf-jpeg2000`은 JPEG 2000을 선택한다. backend의 전체 rendering은 켜지 않는다.
+
+| 내부 패키지 | 원본 버전 | 라이선스 | 보완 범위 |
+| --- | --- | --- | --- |
+| `rhwp-hayro-jbig2` `0.3.0-rhwp.1` | `hayro-jbig2` `0.3.0` | Apache-2.0 OR MIT | 사전·segment·bitmap의 예약과 반복 작업 |
+| `rhwp-hayro-ccitt` `0.3.0-rhwp.1` | `hayro-ccitt` `0.3.0` | Apache-2.0 OR MIT | JBIG2 MMR의 changing-line 저장과 디코딩 작업 |
+| `rhwp-hayro-jpeg2000` `0.4.0-rhwp.1` | `hayro-jpeg2000` `0.4.0` | Apache-2.0 OR MIT | tile·component·wavelet 저장과 디코딩 작업 |
+| `rhwp-codec-resource` `0.1.0` | RHWP 자체 코드 | MIT | 동기 요청의 fallible 예약·논리 작업량 연결 |
+
+원저작자는 Laurenz Stampfl이며 원본은 [LaurenzV/hayro](https://github.com/LaurenzV/hayro)이다.
+각 `vendor/rhwp-hayro-*/`의 `NOTICE`, `LICENSE-*`, `UPSTREAM_FILES.json`에 원본 고지와
+공식 `.crate` archive SHA-256·파일별 원본 해시를 보존했다. JPEG 2000의 ICC 자료 고지는
+`vendor/rhwp-hayro-jpeg2000/assets/README.md`와 `assets/LICENSE.txt`를 함께 배포한다.
+이는 RHWP 보정판이며 공식 hayro 릴리스가 아니다. 패키지는 게시 전 로컬 후보이고
+실제 crates.io 게시 승인·이름 확정은 #8174의 절차를 따른다.
+
 ### 전체 Rust 의존성 요약
 
-`cargo metadata --locked` 기준 package entry는 247개이며, 그중 registry 또는 Git
-source를 가진 외부 Rust 크레이트는 243개다. 나머지 4개는 현재 workspace 패키지다.
+전체 의존성은 현재 `Cargo.toml` / `Cargo.lock`과 선택한 feature·target을 함께 기준으로 확인한다.
+`cargo metadata --locked --features pdf-import --filter-platform wasm32-unknown-unknown` 등으로
+해당 구성의 resolve graph를 확인하며, lockfile에 존재한다는 이유만으로 최종 배포물에 포함된다고
+간주하지 않는다. 과거 workspace의 package 개수는 현재 의존성 총수로 사용하지 않는다.
 
 주요 라이선스군:
 
@@ -10475,6 +10516,7 @@ source를 가진 외부 Rust 크레이트는 243개다. 나머지 4개는 현재
 - MIT 단독
 - Apache-2.0 OR MIT
 - BSD-2-Clause / BSD-3-Clause
+- BSD-3-Clause AND MIT (`brotli`, PDF 전이 의존성)
 - Zlib
 - Unlicense
 - 0BSD
@@ -10485,6 +10527,183 @@ source를 가진 외부 Rust 크레이트는 243개다. 나머지 4개는 현재
 
 > 모든 Rust 의존성은 MIT, Apache-2.0, BSD, Zlib, Unlicense, 0BSD, ISC 등 permissive license 계열이거나
 > permissive option을 포함하며, rhwp의 MIT 라이선스와 호환된다.
+
+### PDF 입력 의존성의 고지
+
+`pdf-import`는 기본 포함이며, 이를 통해 `rhwp-pdf-import-backend =0.3.78-rhwp.1`과
+`office_oxide =0.1.9`를 모두 `default-features = false`로 사용한다.
+`office_oxide` 직접 버전 제약은 `pdf_oxide 0.3.78`과의 컴파일 호환성을 위한 것이며,
+rhwp가 Office 입력 형식 지원을 추가했다는 뜻은 아니다.
+내부 backend는 Brotli private scratch를 요청별로 제한하기 위해
+`brotli-decompressor =6.0.1`도 직접 사용한다. 해당 crate의 라이선스 표기는
+`BSD-3-Clause/MIT`이며 기존 `brotli 9.0.0`의 `BSD-3-Clause AND MIT`와 구별한다.
+감사한 Native/WASM 구성에서는 `std`만 활성화하고 `unsafe`/FFI feature는 활성화하지 않는다.
+
+내부 backend는 메인테이너의 별도 승인에 따라 `pdf_oxide 0.3.78`을 보존한 보안 패치다.
+크기 최적화용 소스 추출은 하지 않는다. 수정판을 공식 PDFOxide release로 표시하지 않으며,
+원본·변경 범위·배포 제한은 [패치 기록](vendor/rhwp-pdf-import-backend/RHWP_PATCHES.md),
+원본 파일별 hash는 `vendor/rhwp-pdf-import-backend/UPSTREAM_FILES.json`에 보존한다.
+원래 MIT/Apache 라이선스·NOTICE·상표 정책도 해당 directory에 유지한다.
+내부 Rust dependency는 `rlib`만 생성한다. 원본 C API·writer 소스는 보존하지만 이 내부
+package를 독립 cdylib/staticlib 제품으로 배포하는 계약은 제공하지 않는다.
+manifest는 crates.io 게시 후보로 준비되어 있지만, 실제 게시 일정과 공개 registry 소비 검증은 제품 릴리즈와 별도로 확정한다.
+
+아래 고지는 해당 버전 crate 배포본의 `NOTICE`와 `LICENSE-MIT` 원문이다.
+두 crate의 재배포에는 dual license 중 MIT 선택지를 적용한다. 이 고지와 각 전이 의존성의
+라이선스·저작권 고지는 실제 Native/WASM 배포물의 문서 또는 고지 자료에도 함께 제공해야 한다.
+제품명·패키지명·로고의 상표 사용 권한은 소스 코드 라이선스와 별개다.
+
+#### PDFOxide 0.3.78 NOTICE
+
+```text
+PDFOxide
+Copyright (c) 2025-2026 Yury Fedoseev and the PDFOxide project contributors
+
+PDFOxide is the product; "pdf_oxide" is the name of its packages/crate.
+
+This product is licensed under the terms of the MIT license OR the
+Apache License, Version 2.0, at your option. See LICENSE-MIT and
+LICENSE-APACHE for the full license texts.
+
+Copyright in the PDFOxide code base is held by Yury Fedoseev and the project's
+contributors; contributions are made under the project's Contributor License
+Agreement (see CLA.md) and/or the Developer Certificate of Origin (see
+CONTRIBUTING.md), under which contributors retain ownership of their
+contributions and license them to the project.
+
+"PDFOxide" (the product name) and "pdf_oxide" (the package name), together with
+any associated logo, are trademarks of Yury Fedoseev and are not covered by the
+source-code license. See TRADEMARKS.md.
+
+Portions of this software incorporate third-party open-source components; their
+respective licenses are listed in the dependency manifests (Cargo.toml /
+Cargo.lock and the per-binding package manifests).
+```
+
+#### PDFOxide 0.3.78 MIT License
+
+```text
+Copyright (c) 2025-present Yury Fedoseev
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without
+limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software
+is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice
+shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+```
+
+#### OfficeOxide 0.1.9 NOTICE
+
+```text
+OfficeOxide
+Copyright (c) 2026 Yury Fedoseev and the OfficeOxide project contributors
+
+OfficeOxide is the product; "office_oxide" is the name of its packages/crate.
+
+This product is licensed under the terms of the MIT license OR the
+Apache License, Version 2.0, at your option. See LICENSE-MIT and
+LICENSE-APACHE for the full license texts.
+
+Copyright in the OfficeOxide code base is held by Yury Fedoseev and the project's
+contributors; contributions are made under the project's Contributor License
+Agreement (see CLA.md) and/or the Developer Certificate of Origin (see
+CONTRIBUTING.md), under which contributors retain ownership of their
+contributions and license them to the project.
+
+"OfficeOxide" (the product name) and "office_oxide" (the package name), together with
+any associated logo, are trademarks of Yury Fedoseev and are not covered by the
+source-code license. See TRADEMARKS.md.
+
+Portions of this software incorporate third-party open-source components; their
+respective licenses are listed in the dependency manifests (Cargo.toml /
+Cargo.lock and the per-binding package manifests).
+```
+
+#### OfficeOxide 0.1.9 MIT License
+
+```text
+Copyright (c) 2026 Yury Fedoseev
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without
+limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software
+is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice
+shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+```
+
+#### PDFOxide 동봉 폰트
+
+`pdf_oxide 0.3.78` 소스에는 DejaVu Sans Regular/Bold가 `include_bytes!`로 선언되어 있다.
+이 자산이 포함된 배포에 대비해 crate의 `src/fonts/assets/LICENSE-DejaVu` 고지를 보존한다.
+소스에 존재하는 것과 최종 WASM에 포함되는지는 구분하며, 포함 여부를 크기 측정만으로 단정하지 않는다.
+별도 `cjk-form-fonts` / `cjk-render-fallback` 기능의 Droid Sans Fallback·Noto Emoji는
+현재 활성화하지 않는다. 해당 기능 도입 시 별도 폰트 고지도 함께 추가한다.
+
+```text
+DejaVu Fonts — Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved.
+Bitstream Vera is a trademark of Bitstream, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the fonts accompanying this license ("Fonts") and associated documentation
+files (the "Font Software"), to reproduce and distribute the Font Software,
+including without limitation the rights to use, copy, merge, publish,
+distribute, and/or sell copies of the Font Software, and to permit persons to
+whom the Font Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright and trademark notices and this permission notice shall be
+included in all copies of one or more of the Font Software typefaces.
+
+The Font Software may be modified, altered, or added to, and in particular the
+designs of glyphs or characters in the Fonts may be modified and additional
+glyphs or characters may be added to the Fonts, only if the fonts are renamed
+to names not containing either the words "Bitstream" or the word "Vera".
+
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT,
+TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL BITSTREAM OR THE GNOME FOUNDATION
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL,
+SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO
+USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+```
 
 ---
 
@@ -10551,6 +10770,7 @@ source를 가진 외부 Rust 크레이트는 243개다. 나머지 4개는 현재
 | Pretendard (9종) | SIL Open Font License 1.1 | github.com/orioncactus/pretendard | Sans-serif fallback |
 | Noto Serif KR (2종) | SIL Open Font License 1.1 | Google Fonts | Serif fallback |
 | Noto Sans KR (3종) | SIL Open Font License 1.1 | Google Fonts | Sans-serif fallback |
+| Noto Sans Math Regular 2.001 | SIL Open Font License 1.1 | Google LLC / Ubuntu `fonts-noto-core`; [공식 라이선스](https://github.com/google/fonts/blob/main/ofl/notosansmath/OFL.txt) | CanvasKit 수학 기호 fallback; [라이선스 전문](assets/fonts/NotoSansMath-OFL.txt) 동봉 |
 | Nanum Myeongjo (3종) | SIL Open Font License 1.1 | Google Fonts | Serif fallback |
 | Nanum Gothic (3종) | SIL Open Font License 1.1 | Google Fonts | Sans-serif fallback |
 | Nanum Gothic Coding (2종) | SIL Open Font License 1.1 | Google Fonts | Monospace fallback |
@@ -10558,11 +10778,61 @@ source를 가진 외부 Rust 크레이트는 243개다. 나머지 4개는 현재
 | Gowun Dodum | SIL Open Font License 1.1 | Google Fonts | Sans-serif fallback |
 | D2 Coding (2종) | SIL Open Font License 1.1 | NAVER | Monospace fallback |
 | Spoqa Han Sans | SIL Open Font License 1.1 | github.com/spoqa/spoqa-han-sans | Sans-serif fallback |
-| Source Han Serif K Old Hangul subset | SIL Open Font License 1.1 | Adobe / Google | 옛한글 PUA fallback, `SourceHanSerifK-OFL.txt` 동봉 |
-| Latin Modern Math | GUST Font License | GUST / TeX ecosystem | 수식 fallback |
+| RHWP Old Hangul subset | SIL Open Font License 1.1 | Adobe / Google | 옛한글 PUA fallback, `SourceHanSerifK-OFL.txt` 동봉 |
+| Latin Modern Math 1.959 | GUST Font License | B. Jackowski, P. Strzelczyk, P. Pianowski / TeX 사용자 그룹 | 수식 fallback 및 적분·곱셈·근호·중괄호·연산자·대문자 윤곽; [라이선스 전문](assets/fonts/LatinModernMath-GUST-FONT-LICENSE.txt) 동봉 |
 | Cafe24 써라운드 | 카페24 무료 배포 | fonts.cafe24.com | 장식체 |
 | Cafe24 슈퍼매직 | 카페24 무료 배포 | fonts.cafe24.com | 장식체 |
-| 행복고딕 (Happiness Sans, 4종) | 무료 배포 | 행복나눔재단 | Sans-serif fallback |
+| 해피니스 산스 (Happiness Sans, 4종) | SIL Open Font License 1.1 | [현대백화점](https://thehyundaifont.com/) | 공식 배포 WOFF2 원본. [동봉 라이선스 PDF](ttfs/redistributable/happiness-sans/HapinessSans_License.pdf)에 저작권·Reserved Font Name·OFL 전문 수록 |
+
+테스트 폰트를 공개 GitHub 저장소에 포함하는 것도 재배포이므로, 제품 번들 여부와 관계없이
+원본의 저작권·라이선스·수정본 명명 조건이 적용된다. 저장소의 MIT 라이선스가 외부 폰트의
+재배포 권한을 대신하지 않는다.
+
+| 경로 | 출처·라이선스 | 비고 |
+| --- | --- | --- |
+| `tests/fixtures/fonts/RHWPEquation*.ttf` (3개) | Adobe Noto Sans KR 수정본, SIL OFL 1.1 | [출처·변형 설명](tests/fixtures/fonts/RHWPEquationFonts.LICENSE.md), [전문](tests/fixtures/fonts/RHWPEquationFonts.OFL.txt). 내부 family는 `RHWP Equation Contract`; 문서의 요청 이름은 렌더러의 명시적 대체 설정으로 연결 |
+| `tests/fixtures/native_font_family_names/family-contract.ttf` | Adobe Noto Sans KR 수정본, SIL OFL 1.1 | [출처](tests/fixtures/native_font_family_names/README.md), [전문](tests/fixtures/native_font_family_names/OFL.txt) |
+| `tests/fixtures/native_font_styles/*.ttf` (2개) | Adobe Noto Sans KR 수정본, SIL OFL 1.1 | [출처·재생성](tests/fixtures/native_font_styles/README.md), [전문](tests/fixtures/native_font_styles/OFL.txt) |
+| 나머지 `tests/fixtures/fonts/`의 TTF·TTC (7개) | 저장소 생성기의 직접 작성 윤곽선, MIT | 각 `*.LICENSE.md`에 생성기·용도 기록. 외부 폰트 수정본과 구별 |
+
+`assets/fonts/NotoSansMath-Regular.woff2`는 Ubuntu 설치본의 전체 TTF를 WOFF2로 변환한
+파일이다. 이 버전의 `Copyright 2018 Google LLC. All Rights Reserved.`와 SIL OFL 1.1
+정보를 폰트 내부 및 동봉 라이선스에 보존한다. 소프트웨어와 함께 재배포하며 폰트 자체는
+SIL OFL 1.1을 유지한다. 원본 경로·SHA-256·변환 방법은 [폰트 목록](assets/fonts/FONTS.md)에 기록한다.
+
+`src/renderer/equation/integral_outline.rs`,
+`src/renderer/equation/multiplication_outline.rs`,
+`src/renderer/equation/radical_outline.rs`,
+`src/renderer/equation/brace_outline.rs`,
+`src/renderer/equation/brace_stretch_data.rs`,
+`src/renderer/equation/round_stretch_data.rs`,
+`src/renderer/equation/relation_outline.rs`,
+`src/renderer/equation/operator_outline.rs`의 윤곽 상수는 동봉된 Latin Modern Math
+1.959의 `integral`·`multiply`·`radical`·`braceleft`·`plus`·`minus`·`equal` glyph에서
+추출한 공개 윤곽이다. `brace_stretch_data.rs`는 중괄호의 MATH 크기별 variant와
+`uni23A7`·`uni23A8`·`uni23A9`·`braceleft.ex` 조립 부품의 윤곽·연결 메트릭도 포함한다.
+`round_stretch_data.rs`는 공개 둥근 괄호의 `uni239B`·`uni239C`·`uni239D`
+MATH 조립 부품의 윤곽·연결 메트릭을 포함한다.
+원본 SHA-256과 추출 방법을 해당 파일에 기록한다. 원본 Copyright 2012--2014
+B. Jackowski, P. Strzelczyk, P. Pianowski를 보존하고, 해당 윤곽 데이터는
+GUST Font License를 유지한다. rhwp는 글꼴 파일을 개명·수정하는 대신 이 윤곽의
+좌표를 공통 수식 ink 영역으로 변환한다. 한컴 사설 글꼴의 윤곽은 포함하지 않는다.
+
+`relation_outline.rs`는 같은 공개 원본의 `less`·`greater`·`lessequal`·`greaterequal`·
+`parenleft`·`parenright` glyph를 추출한 관계 기호와 둥근 괄호 윤곽이다.
+저작권·GUST Font License를 그대로 유지한다. 사설 face에서 소비하는 bbox는
+메트릭이며 사설 윤곽 데이터가 아니다.
+
+`src/renderer/equation/accent_outline.rs`의 화살촉은 같은 공개 원본의 MATH 조립
+부품 `arrowright.rt`, `arrowboth.lft`, `arrowboth.rt`에서 파생했다. 원 저작권과
+GUST Font License를 유지하며 사설 글꼴의 윤곽·바이트는 포함하지 않는다.
+
+`assets/fonts/LatinModernMath-VariableOutline-subset.otf`는 같은 공개 원본의
+정체 A~Z/a~z와 이탤릭 a~z 윤곽을 포함한 13,488 byte 파생 OpenType CFF 글꼴이다. 원본 저작권·
+라이선스를 보존하고 family·full·PostScript 및 CFF 이름을 변경했다.
+[파생 manifest](assets/fonts/MANIFEST-RHWP-LMM-VariableOutline.txt)에 원본·
+파생 SHA와 변경 범위를 기록한다. `src/renderer/equation/variable_outline.rs`는
+이 공개 윤곽을 파싱하며, 사설 글꼴에서는 em 프레임의 메트릭만 소비한다.
 
 ---
 
@@ -10579,6 +10849,11 @@ source를 가진 외부 Rust 크레이트는 243개다. 나머지 4개는 현재
 ---
 
 ## 직접 포팅한 알고리즘
+
+공통 Print 장치 면적 표본(`src/renderer/print_image_sampling.rs`)은 공개 PDFium
+`chromium/7999`의 CStretchEngine 고정소수점 산술 계약을 적용한다. 원래 PDFium Authors와
+Foxit Software의 저작권 고지 및 BSD-3-Clause 조건은 `licenses/pdfium/LICENSE`에 보존한다.
+이 항목은 Cargo 크레이트 의존성이 아니다. 출처는 `licenses/pdfium/README.md`에 있다.
 
 ### Volexity hwp-extract
 
@@ -10645,6 +10920,592 @@ rhwp는 **MIT 라이선스**로 배포된다.
 ---
 
 *이 문서는 `Cargo.toml`, `Cargo.lock`, 각 `package.json`/`package-lock.json`, `assets/fonts/FONTS.md` 기준으로 현행화되었으며, 의존성 업데이트 시 함께 갱신해야 한다.*
+
+배포 폰트의 파일별 SHA·원본 저작권·라이선스 전문은
+[fonts/licenses](assets/fonts/licenses/README.md)에 함께 보존한다. 제품 폰트 37개와
+공개 테스트·Native 원본 18개를 [목록](assets/fonts/licenses/font-notices.json)에 등록하며,
+등록되지 않은 공개 폰트 또는 배포 고지 누락은 `scripts/frontend-font-assets.test.mjs`가 검출한다.
+상용 글꼴의 문서 요청 이름은 대체 설정에서 처리하고, 파생 폰트의 내부 이름으로 사용하지 않는다.
+
+### 기본 ICC CMM
+
+`pdf-icc`는 기본 feature이며 Native/WASM에서 같은 순수 Rust CMM인 `rhwp-qcms`를
+사용한다. qcms 0.3.0의 내부 보정판이며 Mozilla Foundation·Marti Maria 등의 원 저작권과
+MIT 전문은 [COPYING](vendor/rhwp-qcms/COPYING)에 보존한다. 원본 archive·VCS commit과
+요청별 CLUT 예약·작업량 변경은 [패치 기록](vendor/rhwp-qcms/RHWP_PATCHES.md)에 있다.
+공식 qcms 릴리스나 이미 게시된 crate로 표시하지 않는다. 실제 포장·독립 소비는 #8174 S05에서
+최종 dependency graph로 재검증한다.
+
+## Nimbus Roman 계량 자료
+
+`src/renderer/font_metric_nimbus_roman.rs`와 `data/font-metrics/nimbus-roman/`은
+URW Base35의 글꼴 프로그램에서 추출한 이름·Unicode 대응·전진폭 계량 자료다.
+원본 프로그램 SHA-256과 생성 방법은 해당 디렉터리의 `source.json`·`README.md`에 있다.
+글꼴 프로그램 바이트와 윤곽선은 이 자료에 포함하지 않는다. 원본의 고지는 패키지에 동봉한
+`data/font-metrics/nimbus-roman/URW-FONT-NOTICE.txt`에 보존한다.
+
+==============================================================================
+[한글 편집기] Anthropic TypeScript SDK (@anthropic-ai/sdk) — rhwp AI 도우미 묶음에 포함 1.3.0
+라이선스: Apache-2.0 (1.0.0 이전 기여분 MIT)
+
+rhwp-studio 0.9.0 웹 배포(빌드 커밋 7213ed1)의 assets/claude-*.js 에 포함(상류 AI 도우미 지연 로드 묶음, Drey 는 로드하지 않음). 상류 고지 목록에 없어 보완
+
+@anthropic-ai/sdk 1.3.0 — Apache-2.0
+출처: https://registry.npmjs.org/@anthropic-ai/sdk/-/sdk-1.3.0.tgz (npm integrity 가 lock 값과 일치, tarball SHA-256 aece3ad0a5f4ed615c5ade1f21d3a5f2c3cff397f2dc460f3e01b8aabf824fc8)
+고정 근거: rhwp-studio/package-lock.json @ edwardkim/rhwp 7213ed1f96266b95e22cd5645a07851c9c18298e (SHA-256 61993c57784ad01524554d9c637395a65f1a2430b945a34b59e25a3d501678a2)
+포함 위치: Drey 의 한글 편집기 rhwp-studio 0.9.0 웹 배포 assets/claude-*.js (상류 AI 도우미 지연 로드 묶음 — Drey 경로에서는 로드하지 않지만 파일은 배포됨). 묶음 표지: Stainless 생성 클라이언트·packageVersion `1.3.0`
+NOTICE 파일: 패키지에 없음
+
+==============================================================================
+npm 패키지의 LICENSE (Apache-2.0)
+==============================================================================
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright 2023 Anthropic, PBC.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+==============================================================================
+npm 패키지의 LICENSE-MIT (1.0.0 이전 MIT 기여분)
+==============================================================================
+This repository changed its license from the MIT License to the Apache License, Version 2.0 (see LICENSE) in version 1.0.0 of the @anthropic-ai/sdk package. The MIT License below still applies to every version published under it, and to third-party contributions merged into this repository before the change.
+
+--------------------------------------------------------------------------------
+
+Copyright 2023 Anthropic, PBC.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+==============================================================================
+[한글 편집기] OpenTelemetry API (@opentelemetry/api) — rhwp AI 도우미 묶음에 포함 1.10.0
+라이선스: Apache-2.0
+
+rhwp-studio 0.9.0 웹 배포(빌드 커밋 7213ed1)의 assets/claude-*.js 에 포함(상류 AI 도우미 지연 로드 묶음, Drey 는 로드하지 않음). 상류 고지 목록에 없어 보완
+
+@opentelemetry/api 1.10.0 — Apache-2.0
+출처: https://registry.npmjs.org/@opentelemetry/api/-/api-1.10.0.tgz (npm integrity 가 lock 값과 일치, tarball SHA-256 d23732a83d91a563ee223c44c81d231ad6d5123563fb12642e9272adc5d86dd9)
+고정 근거: rhwp-studio/package-lock.json @ edwardkim/rhwp 7213ed1f96266b95e22cd5645a07851c9c18298e (SHA-256 61993c57784ad01524554d9c637395a65f1a2430b945a34b59e25a3d501678a2)
+포함 위치: Drey 의 한글 편집기 rhwp-studio 0.9.0 웹 배포 assets/claude-*.js (상류 AI 도우미 지연 로드 묶음 — Drey 경로에서는 로드하지 않지만 파일은 배포됨). 묶음 표지: `@opentelemetry/api` 문자열·API 판 `1.10.0` (Anthropic SDK 의존성)
+NOTICE 파일: 패키지에 없음
+
+==============================================================================
+npm 패키지의 LICENSE (Apache-2.0)
+==============================================================================
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+==============================================================================
+[한글 편집기] standardwebhooks — rhwp AI 도우미 묶음에 포함 1.1.1
+라이선스: MIT
+
+rhwp-studio 0.9.0 웹 배포(빌드 커밋 7213ed1)의 assets/claude-*.js 에 포함(상류 AI 도우미 지연 로드 묶음, Drey 는 로드하지 않음). 상류 고지 목록에 없어 보완
+
+standardwebhooks 1.1.1 — MIT
+출처: https://registry.npmjs.org/standardwebhooks/-/standardwebhooks-1.1.1.tgz (npm integrity 가 lock 값과 일치, tarball SHA-256 d0bc8fec280c9e30ea3cbc876f44fe71d56f443aeca2bd2bdf745718308d4aed)
+고정 근거: rhwp-studio/package-lock.json @ edwardkim/rhwp 7213ed1f96266b95e22cd5645a07851c9c18298e (SHA-256 61993c57784ad01524554d9c637395a65f1a2430b945a34b59e25a3d501678a2)
+포함 위치: Drey 의 한글 편집기 rhwp-studio 0.9.0 웹 배포 assets/claude-*.js (상류 AI 도우미 지연 로드 묶음 — Drey 경로에서는 로드하지 않지만 파일은 배포됨). 묶음 표지: webhook-id·webhook-signature (Anthropic SDK 의존성)
+NOTICE 파일: 패키지에 없음
+
+==============================================================================
+npm 꾸러미에 라이선스 파일이 없어 공식 저장소 standard-webhooks/standard-webhooks 의 libraries/LICENSE(MIT, JS 라이브러리 libraries/javascript 를 포함) — 커밋 c7cd8a9eadf9879d6dca345e168dc8d15d19e487
+==============================================================================
+The MIT License
+
+Copyright (c) 2023 Svix (https://www.svix.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+==============================================================================
+[한글 편집기] @stablelib/base64 — rhwp AI 도우미 묶음에 포함 1.0.1
+라이선스: MIT
+
+rhwp-studio 0.9.0 웹 배포(빌드 커밋 7213ed1)의 assets/claude-*.js 에 포함(상류 AI 도우미 지연 로드 묶음, Drey 는 로드하지 않음). 상류 고지 목록에 없어 보완
+
+@stablelib/base64 1.0.1 — MIT
+출처: https://registry.npmjs.org/@stablelib/base64/-/base64-1.0.1.tgz (npm integrity 가 lock 값과 일치, tarball SHA-256 0130711d2e0d3f87436c7825db1f35bd6134fba2eda64b0df43d781f9b6a596a)
+고정 근거: rhwp-studio/package-lock.json @ edwardkim/rhwp 7213ed1f96266b95e22cd5645a07851c9c18298e (SHA-256 61993c57784ad01524554d9c637395a65f1a2430b945a34b59e25a3d501678a2)
+포함 위치: Drey 의 한글 편집기 rhwp-studio 0.9.0 웹 배포 assets/claude-*.js (상류 AI 도우미 지연 로드 묶음 — Drey 경로에서는 로드하지 않지만 파일은 배포됨). 묶음 표지: Base64Coder (standardwebhooks 의존성)
+NOTICE 파일: 패키지에 없음
+
+==============================================================================
+npm 패키지의 LICENSE (MIT)
+==============================================================================
+This software is licensed under the MIT license:
+
+Copyright (C) 2016 Dmitry Chestnykh
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+==============================================================================
+[한글 편집기] fast-sha256 — rhwp AI 도우미 묶음에 포함 1.3.0
+라이선스: Unlicense
+
+rhwp-studio 0.9.0 웹 배포(빌드 커밋 7213ed1)의 assets/claude-*.js 에 포함(상류 AI 도우미 지연 로드 묶음, Drey 는 로드하지 않음). 상류 고지 목록에 없어 보완
+
+fast-sha256 1.3.0 — Unlicense
+출처: https://registry.npmjs.org/fast-sha256/-/fast-sha256-1.3.0.tgz (npm integrity 가 lock 값과 일치, tarball SHA-256 4f897ea2594dc9cfb1250e7d4d0f65b4f105952a802fff2d06990bf1dc2c84f6)
+고정 근거: rhwp-studio/package-lock.json @ edwardkim/rhwp 7213ed1f96266b95e22cd5645a07851c9c18298e (SHA-256 61993c57784ad01524554d9c637395a65f1a2430b945a34b59e25a3d501678a2)
+포함 위치: Drey 의 한글 편집기 rhwp-studio 0.9.0 웹 배포 assets/claude-*.js (상류 AI 도우미 지연 로드 묶음 — Drey 경로에서는 로드하지 않지만 파일은 배포됨). 묶음 표지: SHA-256 상수 1116352408 (standardwebhooks 의존성)
+NOTICE 파일: 패키지에 없음
+
+==============================================================================
+npm 패키지의 LICENSE (Unlicense)
+==============================================================================
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <http://unlicense.org>
 
 ==============================================================================
 [글꼴] Pretendard 
@@ -11551,7 +12412,7 @@ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
 ==============================================================================
-[글꼴] Drey Old Hangul Fallback Font (Source Han Serif K 옛한글 부분 집합의 이름을 바꾼 수정본 — 예약 이름 Source 를 쓰지 않음) 
+[글꼴] RHWP Old Hangul (Source Han Serif K 옛한글 부분 집합 — rhwp 0.9.0 상류가 이름을 바꾼 수정본, 예약 이름 Source 를 쓰지 않음) 
 라이선스: SIL OFL 1.1
 
 
@@ -11983,10 +12844,29 @@ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
 ==============================================================================
-[글꼴] Latin Modern Math 
+[글꼴] Latin Modern Math (파생 RHWP LMM Variable Outline 포함) 
 라이선스: GUST Font License
 https://www.gust.org.pl/projects/e-foundry/lm-math
+rhwp 0.9.0 상류의 파생 글꼴 LatinModernMath-VariableOutline-subset.otf(이름 RHWP LMM Variable Outline, 13,488 B)도 같은 라이선스 — 상류 manifest 원문: RHWP LMM Variable Outline 파생 글꼴 manifest
 
+원본: Latin Modern Math 1.959
+원본 파일: LatinModernMath-Regular.woff2
+원본 SHA-256: 1177d9025d1e797c54b3c7676976365abd90f903423091de7f0f4e7a4b372162
+Copyright 2012--2014 B. Jackowski, P. Strzelczyk, P. Pianowski.
+라이선스: 동봉 LatinModernMath-GUST-FONT-LICENSE.txt의 GUST Font License
+
+파생 파일: LatinModernMath-VariableOutline-subset.otf
+파생 SHA-256: c3b70b3a6ad5d7b03fb9c86067b6fc212b3a084870a9acff13238190137bf260
+family/full name: RHWP LMM Variable Outline
+PostScript name: RHWP-LMM-VariableOutline
+
+변경: 정체 A~Z/a~z와 이탤릭 a~z의 Unicode 윤곽만 fontTools subset으로
+보존하고 힌트와 MATH/GSUB/GPOS 테이블을 제외했다. family/full/PostScript
+이름과 CFF 이름을 변경했으며 원본 저작권·라이선스 name 정보와 timestamp를
+보존했다. 한컴 대문자는 공개 정체 윤곽에 독립 Print 기울임을 적용한다.
+굵은 변수도 같은 공개 일반 윤곽에 확인한 전진·획·장평을 소비한다.
+사용자 설치 글꼴의 바이트·윤곽은 포함하지 않으며 공개 원본과 파생 파일
+모두 위 GUST 라이선스 조건을 유지한다.
 
 % This is version 1.0, dated 22 June 2009, of the GUST Font License.
 % (GUST is the Polish TeX Users Group, https://www.gust.org.pl)
@@ -12016,6 +12896,393 @@ https://www.gust.org.pl/projects/e-foundry/lm-math
 % The latest version of the LaTeX Project Public License is in
 % https://www.latex-project.org/lppl.txt and version 1.3c or later
 % is part of all distributions of LaTeX version 2006/05/20 or later.
+
+==============================================================================
+[글꼴] Noto Sans Math 2.001 
+라이선스: SIL OFL 1.1
+https://github.com/google/fonts/tree/main/ofl/notosansmath
+저작권 Google LLC. 상류 설명: Ubuntu fonts-noto-core 의 TTF 전체 글리프를 WOFF2 로 변환(부분 집합·문자 대응 변경 없음)
+
+Copyright 2018 Google LLC. All Rights Reserved.
+Copyright 2010,2012-2020 Google Inc.; 2015-2020 Google LLC.
+SIL OPEN FONT LICENSE Version 1.1
+
+PREAMBLE
+
+
+The goals of the Open Font License (OFL) are to stimulate
+worldwide development of collaborative font projects,
+to support the font creation efforts
+of academic and linguistic communities,
+and to provide a free and open framework
+in which fonts may be shared and improved
+in partnership with others.
+
+The OFL allows the licensed fonts to be used, studied,
+modified and redistributed freely
+as long as they are not sold by themselves.
+The fonts, including any derivative works,
+can be bundled, embedded,
+redistributed and/or sold with any software
+provided that any reserved names are not used
+by derivative works.
+The fonts and derivatives, however,
+cannot be released under any other type of license.
+The requirement for fonts to remain under this license
+does not apply to any document
+created using the fonts or their derivatives.
+
+DEFINITIONS
+
+"Font Software" refers to the set of files
+released by the Copyright Holder(s) under this license
+and clearly marked as such.
+This may include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such
+after the copyright statement(s).
+
+"Original Version" refers to the collection
+of Font Software components
+as distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative
+made by adding to, deleting, or substituting --
+in part or in whole --
+any of the components of the Original Version,
+by changing formats
+or by porting the Font Software to a new environment.
+
+"Author" refers to any designer, engineer, programmer,
+technical writer or other person
+who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+
+Permission is hereby granted, free of charge,
+to any person obtaining a copy of the Font Software,
+to use, study, copy, merge, embed, modify, redistribute,
+and sell modified and unmodified copies of the Font Software,
+subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions,
+may be sold by itself.
+
+2) Original or Modified Versions of the Font Software
+may be bundled, redistributed and/or sold with any software,
+provided that each copy contains the above copyright notice
+and this license.
+These can be included either as stand-alone text files,
+human-readable headers or in the appropriate
+machine-readable metadata fields within text or binary files
+as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use
+the Reserved Font Name(s)
+unless explicit written permission is granted
+by the corresponding Copyright Holder.
+This restriction only applies to the primary font name
+as presented to the users.
+
+4) The name(s) of the Copyright Holder(s)
+or the Author(s) of the Font Software
+shall not be used to promote,
+endorse or advertise any Modified Version,
+except to acknowledge the contribution(s)
+of the Copyright Holder(s) and the Author(s)
+or with their explicit written permission.
+
+5) The Font Software,
+modified or unmodified, in part or in whole,
+must be distributed entirely under this license,
+and must not be distributed under any other license.
+The requirement for fonts to remain under this license
+does not apply to any document
+created using the Font Software.
+
+TERMINATION
+
+This license becomes null and void
+if any of the above conditions are not met.
+
+DISCLAIMER
+
+THE FONT SOFTWARE IS PROVIDED "AS IS",
+WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO
+ANY WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT,
+INCIDENTAL, OR CONSEQUENTIAL DAMAGES,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF THE USE OR INABILITY TO USE
+THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+
+==============================================================================
+[글꼴] Noto Sans Symbols2 2.003 
+라이선스: SIL OFL 1.1
+https://github.com/notofonts/symbols
+저작권 Google Inc. rhwp v0.9.0 태그 assets/fonts 의 파일 그대로
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Noto
+Upstream-Contact: https://github.com/googlei18n/noto-fonts/issues
+ http://groups.google.com/group/noto-font
+Source: https://github.com/googlei18n/noto-fonts
+
+Files: *
+Copyright:
+  2010,2012-2020, Google Inc.
+  2015-2020, Google LLC.
+License-Grant:
+ This Font Software is licensed under the SIL Open Font License,
+ Version 1.1.
+License: OFL-1.1
+
+Files:
+ debian/*
+Copyright:
+  2013-2020, Jonas Smedegaard <dr@jones.dk>
+  2020, Purism, SPC
+  2013, Vasudev Kamath <kamathvasudev@gmail.com>
+License-Grant:
+ This program is free software;
+ you can redistribute it and/or modify it
+ under the terms of the GNU General Public License
+ as published by the Free Software Foundation;
+ either version 3, or (at your option) any later version.
+License: GPL-3+
+
+Files:
+ debian/NotoMono/NotoMono-Regular.ttf
+Copyright:
+  2007, Google Inc.
+License-Grant:
+ This Font Software is licensed under the SIL Open Font License,
+ Version 1.1.
+License: OFL-1.1
+
+License: OFL-1.1
+ PREAMBLE
+ .
+ The goals of the Open Font License (OFL) are to stimulate
+ worldwide development of collaborative font projects,
+ to support the font creation efforts
+ of academic and linguistic communities,
+ and to provide a free and open framework
+ in which fonts may be shared and improved
+ in partnership with others.
+ .
+ The OFL allows the licensed fonts to be used, studied,
+ modified and redistributed freely
+ as long as they are not sold by themselves.
+ The fonts, including any derivative works,
+ can be bundled, embedded,
+ redistributed and/or sold with any software
+ provided that any reserved names are not used
+ by derivative works.
+ The fonts and derivatives, however,
+ cannot be released under any other type of license.
+ The requirement for fonts to remain under this license
+ does not apply to any document
+ created using the fonts or their derivatives.
+ .
+ DEFINITIONS
+ .
+ "Font Software" refers to the set of files
+ released by the Copyright Holder(s) under this license
+ and clearly marked as such.
+ This may include source files, build scripts and documentation.
+ .
+ "Reserved Font Name" refers to any names specified as such
+ after the copyright statement(s).
+ .
+ "Original Version" refers to the collection
+ of Font Software components
+ as distributed by the Copyright Holder(s).
+ .
+ "Modified Version" refers to any derivative
+ made by adding to, deleting, or substituting --
+ in part or in whole --
+ any of the components of the Original Version,
+ by changing formats
+ or by porting the Font Software to a new environment.
+ .
+ "Author" refers to any designer, engineer, programmer,
+ technical writer or other person
+ who contributed to the Font Software.
+ .
+ PERMISSION & CONDITIONS
+ .
+ Permission is hereby granted, free of charge,
+ to any person obtaining a copy of the Font Software,
+ to use, study, copy, merge, embed, modify, redistribute,
+ and sell modified and unmodified copies of the Font Software,
+ subject to the following conditions:
+ .
+ 1) Neither the Font Software nor any of its individual components,
+ in Original or Modified Versions,
+ may be sold by itself.
+ .
+ 2) Original or Modified Versions of the Font Software
+ may be bundled, redistributed and/or sold with any software,
+ provided that each copy contains the above copyright notice
+ and this license.
+ These can be included either as stand-alone text files,
+ human-readable headers or in the appropriate
+ machine-readable metadata fields within text or binary files
+ as long as those fields can be easily viewed by the user.
+ .
+ 3) No Modified Version of the Font Software may use
+ the Reserved Font Name(s)
+ unless explicit written permission is granted
+ by the corresponding Copyright Holder.
+ This restriction only applies to the primary font name
+ as presented to the users.
+ .
+ 4) The name(s) of the Copyright Holder(s)
+ or the Author(s) of the Font Software
+ shall not be used to promote,
+ endorse or advertise any Modified Version,
+ except to acknowledge the contribution(s)
+ of the Copyright Holder(s) and the Author(s)
+ or with their explicit written permission.
+ .
+ 5) The Font Software,
+ modified or unmodified, in part or in whole,
+ must be distributed entirely under this license,
+ and must not be distributed under any other license.
+ The requirement for fonts to remain under this license
+ does not apply to any document
+ created using the Font Software.
+ .
+ TERMINATION
+ .
+ This license becomes null and void
+ if any of the above conditions are not met.
+ .
+ DISCLAIMER
+ .
+ THE FONT SOFTWARE IS PROVIDED "AS IS",
+ WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ INCLUDING BUT NOT LIMITED TO
+ ANY WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+ OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT.
+ IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE
+ FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ INCLUDING ANY GENERAL, SPECIAL, INDIRECT,
+ INCIDENTAL, OR CONSEQUENTIAL DAMAGES,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ ARISING FROM, OUT OF THE USE OR INABILITY TO USE
+ THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+
+License: GPL-3+
+License-Reference: /usr/share/common-licenses/GPL-3
+
+==============================================================================
+[글꼴] RHWP Public Batang 2.21 
+라이선스: SIL OFL 1.1
+https://github.com/googlefonts/batang
+저작권 The Batang and Gungsuh Project Authors. 상류 설명: 공식 Google Fonts Batang 을 RHWP Public Batang 이라는 이름으로 공급하는 전체 글꼴의 WOFF2 압축본(부분 집합 아님)
+
+Copyright 2024 The Batang and Gungsuh Project Authors (https://github.com/googlefonts/batang)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+https://openfontlicense.org
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
 
 ==============================================================================
 [글꼴] KaTeX 글꼴 
