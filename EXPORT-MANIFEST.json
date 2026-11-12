@@ -5,7 +5,7 @@
   "purpose": "설치·업데이트 배포물 공개 저장소 — 저장소에는 안내·변경 사항·고지·체크섬만, 설치 파일은 GitHub Release 자산으로 (git add 금지)",
   "source": {
     "kind": "main",
-    "commit": "6e345fbddf536c8d7bb81ae66d3702b532162552"
+    "commit": "6671f68facea00effddef6c56f8cc08a0d483804"
   },
   "files": [
     {
@@ -21,7 +21,7 @@
     {
       "path": "README.md",
       "bytes": 7986,
-      "sha256": "423878E92CD4494928449F860CB4326DFBAB7AD4892C520B53D7FF05E1835807"
+      "sha256": "FA6A33BE5042F6EDC81F2C28AEBD92FF8E19A50B11BC784D4750096187F2095D"
     },
     {
       "path": "TERMS.ko.md",
@@ -69,14 +69,14 @@
       "sha256": "9D737254E273F66ADA0865335DD20BF8E178B73073266E33E15D7CDFCE08007C"
     },
     {
-      "path": "releases/1.0.6/CHANGES.md",
-      "bytes": 6635,
-      "sha256": "2AE0DFE1813FCBE6CBD8AB606CA688B2EEB4213090C2D27025574A944CC7F3D3"
+      "path": "releases/1.0.7/CHANGES.md",
+      "bytes": 4646,
+      "sha256": "22AEA11AE92E46837CDEE8A76C0FB04194BE76496A0D6A36A82D22CAA88B2F6A"
     },
     {
-      "path": "releases/1.0.6/SHA256SUMS.txt",
+      "path": "releases/1.0.7/SHA256SUMS.txt",
       "bytes": 348,
-      "sha256": "94285442A61A20BF4CF1E601112F08B29C45BB8295F0263201FE4065C365B4AB"
+      "sha256": "648F386575AD47227D20FDC0B8A3A2F7C65584F21F55AB8075DBF360C6919C9E"
     },
     {
       "path": "site/index.html",
@@ -101,28 +101,28 @@
   ],
   "release_assets_not_in_git": [
     {
-      "name": "DreyBrowser-1.0.6-Setup.exe",
-      "source": "out/2026-11-12_v106_publication/release-assets/DreyBrowser-1.0.6-Setup.exe",
-      "bytes": 186384758,
-      "sha256": "E9398C3E8A17F7DACBB90224F9E5115FC6775A8ECBA974BDAE0BA5EAA2F1DE16"
+      "name": "DreyBrowser-1.0.7-Setup.exe",
+      "source": "out/2026-11-12_v107_publication/release-assets/DreyBrowser-1.0.7-Setup.exe",
+      "bytes": 186397239,
+      "sha256": "C1542A1EFB81D72057CF3B9991939DABC94F9DDF3980824B996427F26F80E7C1"
     },
     {
-      "name": "DreyBrowser-1.0.6-full.nupkg",
-      "source": "out/2026-11-12_v106_publication/release-assets/DreyBrowser-1.0.6-full.nupkg",
-      "bytes": 178801526,
-      "sha256": "E69DECDA9EDE3CBD69246827FABDC6501CECCA86B5D6D71DAD1C38E0AB07297D"
+      "name": "DreyBrowser-1.0.7-full.nupkg",
+      "source": "out/2026-11-12_v107_publication/release-assets/DreyBrowser-1.0.7-full.nupkg",
+      "bytes": 178814007,
+      "sha256": "06CF68C54432789AAEF9EC9DE85748D0E283E8557CD967AF47341C935CAB2DB9"
     },
     {
       "name": "releases.win.json",
-      "source": "out/2026-11-12_v106_publication/release-assets/releases.win.json",
+      "source": "out/2026-11-12_v107_publication/release-assets/releases.win.json",
       "bytes": 257,
-      "sha256": "8E51C01D370D35DE2456B8A9C591B4B3CDCFAF9387FFE254BAE7994E5072D5D6"
+      "sha256": "E01B8DC66E7139F61023776F69F9D8DFDF7EF084AE8812B5C111D2533F7BB564"
     },
     {
       "name": "RELEASES",
-      "source": "out/2026-11-12_v106_publication/release-assets/RELEASES",
+      "source": "out/2026-11-12_v107_publication/release-assets/RELEASES",
       "bytes": 82,
-      "sha256": "1062031FE31E0E3E202869841A2B1594F0C819ACA423386ADFB035B3E71BAAB9"
+      "sha256": "E1A019700D0907D10659110932C61F1777467CFE2F869D91D3C961E68594EA5A"
     }
   ],
   "scan": {
@@ -725,7 +725,8 @@
       "2026-11-07 1.0.0: 설치기1회빌드·정적852파일/원본308일치·Sandbox설치41/41·설정/튜토리얼57/57, 1.0.0 full만 참조하는 새 피드·SHA256 대조 완료",
       "2026-11-08 1.0.2: Core전체1396·후속관련37, 최종Release절전36/36·852파일/원본308일치. 설치보존32·진단한영각11·드래그/설정통과근거재사용. 재시작메뉴사진확인. 초기실패보존후관련범위재검사·총설치기2회, 최종CCADC3E0…만배포. out/2026-11-08_v102-verification.md의미확인유지",
       "2026-11-11 1.0.5: 최종 설치기1회(E77C6686…, out/build/v105-final-feed full만 참조)·정적870/원본326·고지75·금지0·카탈로그/고지/글꼴/Probe 관문 통과, 1.0.4→1.0.5 업그레이드 보존43/43·설치본34/34. 실제 OS IME·수동 UI·온라인 업데이트 미확인",
-      "2026-11-12 1.0.6: 최종 설치기1회(E9398C3E…, out/build/v106-final-feed full만 참조)·정적875/원본331·고지76·Ace5파일 공식SHA·금지0·카탈로그/고지/글꼴/Probe 관문 통과, 1.0.5→1.0.6 업그레이드 보존48/48·설치본103/103. 실제 OS IME·외부 앱·온라인 업데이트 미확인"
+      "2026-11-12 1.0.6: 최종 설치기1회(E9398C3E…, out/build/v106-final-feed full만 참조)·정적875/원본331·고지76·Ace5파일 공식SHA·금지0·카탈로그/고지/글꼴/Probe 관문 통과, 1.0.5→1.0.6 업그레이드 보존48/48·설치본103/103. 실제 OS IME·외부 앱·온라인 업데이트 미확인",
+      "2026-11-12 1.0.7: 최종 설치기1회(C1542A1E…, out/build/v107-final-feed full만 참조)·정적875/원본331·고지76·금지0·카탈로그/고지/글꼴/Probe 관문 통과. 실제 OS IME·유료 모델·온라인 업데이트 미확인"
     ]
   }
 }
