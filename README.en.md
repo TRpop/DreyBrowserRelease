@@ -12,7 +12,7 @@ A Windows browser for work. Keep the web pages, documents, folders and AI help f
 
 Built on the Microsoft Edge WebView2 (Chromium) engine. The pictures on this page are drawn examples, not screenshots.
 
-**On this page:** [Vertical tabs](#1-vertical-tabs-wide-pages) · [Work groups & side view](#2-work-groups-and-the-side-view) · [Explorer desktop](#3-explorer-desktop) · [AI, four ways](#4-ai-four-different-ways) · [Documents & extensions](#5-documents-and-extensions) · [Getting started](#getting-started) · [Good to know](#good-to-know)
+**On this page:** [Vertical tabs](#1-vertical-tabs-wide-pages) · [Work groups & side view](#2-work-groups-and-the-side-view) · [Explorer desktop](#3-explorer-desktop) · [DREY AI](#4-drey-ai) · [Other AI features](#5-other-ai-features) · [Documents & extensions](#6-documents-and-extensions) · [Getting started](#getting-started) · [Good to know](#good-to-know)
 
 ## 1. Vertical tabs, wide pages
 
@@ -45,11 +45,25 @@ Arrange several File Explorer folders inside a single tab — the contract folde
 
 *Example:* open "Project folders" in the Vendor review group and the same four folders come back where you left them. The layout is saved as a record; folders are not copied and their permissions do not change.
 
-## 4. AI, four different ways
+## 4. DREY AI
+
+![DREY AI: the button left of the address bar, one conversation with a confirmation card, and Schedule, Tasks and Files on the right](assets/drey-ai.svg)
+
+DREY AI is one assistant that stays with you across the browser — for your schedule, tasks and files. It uses Claude Code or Codex installed on this PC and signed in with your own account; no Drey account is needed, and if it is not set up yet the assistant screen tells you what to install.
+
+- **Open and go back** — the DREY AI button left of the address bar opens the assistant; press it again to return to the tab you were on. Every window shares one conversation, so you continue instead of starting over.
+- **Schedule** — add events and repeating events by asking, and check them on the calendar. A change is shown on a card before it is saved. Reminders after the browser closes are an option in Settings.
+- **Tasks** — multi-step work keeps its plan, what was decided, what is still open and the results of actual runs, so you can pick it up without rereading the chat.
+- **Files** — outputs the assistant made, items you saved and recent storage in one place. File work stays within the folders you approve. Office documents (DOCX, XLSX, PPTX) are created and edited within the supported range, as new copies in the output folder.
+- **Commands** — shell commands and Python scripts run with your normal Windows user rights and are not limited to the folders you approved. So by default you approve each command after seeing it; you can change this in Settings.
+- **Memory** — it keeps what you ask it to remember and a progress summary per topic, looks them up as a short index and reads only what it needs. It does not remember everything you say.
+- **Other apps** — an AI app connected over MCP can ask to add events to your schedule; you approve or decline them together on one card. It cannot see, change or delete your events.
+
+## 5. Other AI features
 
 ![Four panels: AI Agent in a project folder, Ask about this page, a web chatbot in the side view, and MCP working only in a lent group](assets/ai.svg)
 
-Each AI feature does a different job. Pick the one that fits:
+Besides [DREY AI](#4-drey-ai), each of these does a different job. Pick the one that fits:
 
 | Feature | What it is for | How it works |
 |---|---|---|
@@ -58,9 +72,9 @@ Each AI feature does a different job. Pick the one that fits:
 | **Web chatbot in the side view** | Keep ChatGPT or Copilot open beside your work | It is the chatbot's ordinary web page. It does **not** read your page by itself — use “Copy page as Markdown” and paste it in. |
 | **MCP** (Model Context Protocol) | Let an outside AI app use the browser | The app can read tabs and operate only inside a tab group you lend it. Press ⏸ to take control back at any time. |
 
-AI Agent and Ask need the Claude Code or Codex command-line tool installed separately and signed in with your own account. Usage and fees follow that service.
+DREY AI, AI Agent and Ask need the Claude Code or Codex command-line tool installed separately and signed in with your own account. Usage and fees follow that service.
 
-## 5. Documents and extensions
+## 6. Documents and extensions
 
 ![Markdown with math and diagrams, Hangul HWP/HWPX documents, capture, user scripts and plug-ins](assets/documents-extensions.svg)
 
@@ -75,11 +89,11 @@ AI Agent and Ask need the Claude Code or Codex command-line tool installed separ
 
 1. Install Drey Browser and open it. Choose 한국어 or English on first run; a short feature guide opens once (you can reopen it from Settings > About).
 2. Make a group for one job and add its tabs. Try the side view and the tab list layouts in Settings.
-3. For AI Agent or Ask, install Claude Code or Codex and sign in with your own account.
+3. For DREY AI, AI Agent or Ask, install Claude Code or Codex and sign in with your own account.
 
 ## Good to know
 
-- **What you send to AI** — page content sent with Ask, a web chatbot or MCP goes to that AI service. Don't send pages with passwords or personal data. Sites on the AI-excluded list are never read or operated over MCP.
+- **What you send to AI** — content sent with DREY AI, Ask, a web chatbot or MCP goes to that AI service. Don't send pages with passwords or personal data. Sites on the AI-excluded list are never read or operated over MCP.
 - **Terms and privacy** — see [Terms of Use and Privacy Notice](TERMS.md) (effective 2026-11-07). Questions: [Issues](https://github.com/TRpop/DreyBrowserRelease/issues).
 - **Installer** — the installer is not code-signed, so Windows may show a warning.
 - **Source code** — the application source is not published. Open-source notices are in the app (Settings > About > Open-source licenses) and in `THIRD-PARTY-NOTICES.txt`.
