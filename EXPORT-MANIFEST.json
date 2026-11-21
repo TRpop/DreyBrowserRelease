@@ -5,7 +5,7 @@
   "purpose": "설치·업데이트 배포물 공개 저장소 — 저장소에는 안내·변경 사항·고지·체크섬만, 설치 파일은 GitHub Release 자산으로 (git add 금지)",
   "source": {
     "kind": "main",
-    "commit": "d8854052e474fd7b3681948aa0615ac7d22cc6f4"
+    "commit": "07d0229c8f216f17466c75bd822c447ba0f8cfb7"
   },
   "files": [
     {
@@ -21,7 +21,7 @@
     {
       "path": "README.md",
       "bytes": 9983,
-      "sha256": "1E2F18D9DB37128AE1C492BACD8D1B4DE28DA5C9E94DFDFB66B2AE59A32A72D1"
+      "sha256": "1A085BCC0C5EF2109817D7DCDCFC67BC71817D817579DF7498BCAD1FAF89E20C"
     },
     {
       "path": "TERMS.ko.md",
@@ -74,14 +74,14 @@
       "sha256": "9D737254E273F66ADA0865335DD20BF8E178B73073266E33E15D7CDFCE08007C"
     },
     {
-      "path": "releases/1.1.0/CHANGES.md",
-      "bytes": 12601,
-      "sha256": "69F8A4B3CF06093EE61CBD3047643B26A5BDD08F68A527F7F7C59E2D030A2F25"
+      "path": "releases/1.1.1/CHANGES.md",
+      "bytes": 3249,
+      "sha256": "E12C0F37FFDD66108266F70E0DCCAE4CB85CD5394B0F1985D2EE295D9B15F675"
     },
     {
-      "path": "releases/1.1.0/SHA256SUMS.txt",
-      "bytes": 348,
-      "sha256": "B8AD6580369E15A8FD20A0295519B2DECF504E5184DC15932DECC36FE434B6F8"
+      "path": "releases/1.1.1/SHA256SUMS.txt",
+      "bytes": 425,
+      "sha256": "2B005095A8E46ED11516A4FEB2C10E5FC2BB0D73C33086AD03B197B43C34F56D"
     },
     {
       "path": "site/index.html",
@@ -106,28 +106,34 @@
   ],
   "release_assets_not_in_git": [
     {
-      "name": "DreyBrowser-1.1.0-Setup.exe",
-      "source": "out/2026-11-19_v110_publication/release-assets/DreyBrowser-1.1.0-Setup.exe",
-      "bytes": 197663480,
-      "sha256": "CEF131ECFA7DD2EB6E195F80796A97A6BCCFB9C01831EF4A9AFD20F2D04BE21E"
+      "name": "DreyBrowser-1.1.1-Setup.exe",
+      "source": "out/2026-11-21_v111-publication/release-assets/DreyBrowser-1.1.1-Setup.exe",
+      "bytes": 197720572,
+      "sha256": "FCC3E22368A5C8A9EB84094ADA32B7D12764A431F80D32E9671891B7D9E2A2FB"
     },
     {
-      "name": "DreyBrowser-1.1.0-full.nupkg",
-      "source": "out/2026-11-19_v110_publication/release-assets/DreyBrowser-1.1.0-full.nupkg",
-      "bytes": 190080248,
-      "sha256": "3F69C1175F6E446D9B0AFEC653275F5A72BCBB480BD04387D5551D9D5C76FAE3"
+      "name": "DreyBrowser-1.1.1-full.nupkg",
+      "source": "out/2026-11-21_v111-publication/release-assets/DreyBrowser-1.1.1-full.nupkg",
+      "bytes": 190137340,
+      "sha256": "874E2D32C91ED379466A3551F3465722790FAC9F14EC306C0D53D1CC3F184911"
     },
     {
       "name": "releases.win.json",
-      "source": "out/2026-11-19_v110_publication/release-assets/releases.win.json",
+      "source": "out/2026-11-21_v111-publication/release-assets/releases.win.json",
       "bytes": 257,
-      "sha256": "F2F5C0D0BD837EAB3A10AECFF316430AA4C0B244817879A8C78371AD2F6607EB"
+      "sha256": "246945D1D81AE1115242B3E320284494495613624D1B99F2F2D62A3096F7CF58"
     },
     {
       "name": "RELEASES",
-      "source": "out/2026-11-19_v110_publication/release-assets/RELEASES",
+      "source": "out/2026-11-21_v111-publication/release-assets/RELEASES",
       "bytes": 82,
-      "sha256": "ADB44802A77886B1273A60D0729CF32B30EAEE1C427106F810092D3A19A01D5D"
+      "sha256": "C22BA1821534B1EBCB7666253EA73497AF87F475F323B577103D20F8C4693157"
+    },
+    {
+      "name": "CHANGES.md",
+      "source": "out/2026-11-21_v111-publication/release-assets/CHANGES.md",
+      "bytes": 3249,
+      "sha256": "E12C0F37FFDD66108266F70E0DCCAE4CB85CD5394B0F1985D2EE295D9B15F675"
     }
   ],
   "scan": {

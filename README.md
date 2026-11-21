@@ -105,7 +105,7 @@ Installed copies of Drey Browser check this repository for new versions and ask 
 
 ## Notices
 
-Open-source notices: [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) — from source commit d8854052e474fd7b3681948aa0615ac7d22cc6f4; the notices inside each installer are those of that build. Terms of use and privacy: [TERMS.md](TERMS.md).
+Open-source notices: [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) — from source commit 07d0229c8f216f17466c75bd822c447ba0f8cfb7; the notices inside each installer are those of that build. Terms of use and privacy: [TERMS.md](TERMS.md).
 
 ## Good to know
 
